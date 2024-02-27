@@ -17,6 +17,8 @@ pub const CURRENT_EXECUTOR: Item<Addr> = Item::new("executor");
 #[cw_serde]
 pub struct Config {
     pub pool_config: PoolConfig,
+    /// The cooldown period starts after the compound.
+    /// When the cooldown is over the position becomes ready to be compounded again.
     pub autocompound_cooldown_seconds: Uint64,
     pub autocompound_rewards_config: AutocompoundRewardsConfig,
 }
